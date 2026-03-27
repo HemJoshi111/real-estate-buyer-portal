@@ -20,6 +20,7 @@ This project implements a practical buyer workflow with secure authentication an
 ## Key Features
 
 ### Authentication
+
 - Register with `name`, `email`, and `password`
 - Login with email and password
 - Password hashing via `bcryptjs` (no plain-text password storage)
@@ -27,6 +28,7 @@ This project implements a practical buyer workflow with secure authentication an
 - Client-side auth persistence and logout flow
 
 ### Buyer Dashboard
+
 - Personalized greeting with user name and role
 - Sticky sidebar menu (`Home`, `My Favorites`)
 - Property cards with favourite toggles
@@ -34,6 +36,7 @@ This project implements a practical buyer workflow with secure authentication an
 - Toast notifications for add/remove favourite and errors
 
 ### Favourites
+
 - Toggle favourite on any property
 - "My Favorites" view filtered per authenticated user
 - Backend checks ensure users only access/modify their own favourites
@@ -41,12 +44,14 @@ This project implements a practical buyer workflow with secure authentication an
 ## Tech Stack
 
 ### Frontend
+
 - React + Vite
 - React Router
 - Tailwind CSS
 - Lucide React icons
 
 ### Backend
+
 - Node.js + Express
 - MongoDB + Mongoose
 - JWT (`jsonwebtoken`)
@@ -110,6 +115,7 @@ JWT_SECRET=your_secure_jwt_secret
 ```
 
 Notes:
+
 - Use a strong `JWT_SECRET` value.
 - Ensure your MongoDB connection is accessible from your machine.
 
@@ -149,11 +155,13 @@ Go to:
 ## Available Scripts
 
 ### Backend (`server/`)
+
 - `npm run dev` - Start server with nodemon
 - `npm start` - Start server with node
 - `npm run seed` - Seed property data
 
 ### Frontend (`client/`)
+
 - `npm run dev` - Start Vite dev server
 - `npm run build` - Build production assets
 - `npm run preview` - Preview production build
@@ -164,16 +172,19 @@ Go to:
 Base URL: `http://localhost:5000/api`
 
 ### User Routes
+
 - `POST /users/register` - Register new user
 - `POST /users/login` - Login user
 - `GET /users/profile` - Get authenticated profile (protected)
 - `POST /users/logout` - Logout endpoint (protected)
 
 ### Property Routes
+
 - `GET /properties` - Get all properties
 - `GET /properties/:id` - Get property details
 
 ### Favourite Routes
+
 - `GET /favorites/my` - Get current user's favourites (protected)
 - `POST /favorites/toggle` - Add/remove favourite (protected)
 
@@ -219,19 +230,21 @@ Base URL: `http://localhost:5000/api`
 ## Troubleshooting
 
 ### Frontend cannot connect to backend
+
 - Verify backend is running on port `5000`
 - Verify frontend API base URL in `client/src/api/api.js`
 - Check CORS settings in backend
 
 ### Mongo connection issue
+
 - Validate `MONGO_URI` in `server/.env`
 - Confirm network/IP access if using MongoDB Atlas
 
 ### Invalid token / unauthorized errors
+
 - Re-login to refresh token
 - Ensure `Authorization: Bearer <token>` is sent for protected endpoints
 
 ## Author
 
 Developed by Er. Hem Joshi.
-
