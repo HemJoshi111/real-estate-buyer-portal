@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 // Import routes
 import userRoutes from "./routes/user.routes.js";
 import propertyRoutes from './routes/property.routes.js';
+import favoriteRoutes from './routes/favorite.routes.js';
 
 dotenv.config();
 
@@ -25,7 +26,7 @@ app.use(express.json());
 // Routes Middleware
 app.use("/api/users", userRoutes);
 app.use("/api/properties", propertyRoutes);
-
+app.use("/api/favorites", favoriteRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
