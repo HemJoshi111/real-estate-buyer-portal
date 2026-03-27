@@ -5,7 +5,11 @@
 
 A full-stack buyer portal for real-estate users to register, login, browse property listings, and manage personal favourites.
 
-Repository: [HemJoshi111/real-estate-buyer-portal](https://github.com/HemJoshi111/real-estate-buyer-portal)
+- Repository: [https://github.com/HemJoshi111/real-estate-buyer-portal](https://github.com/HemJoshi111/real-estate-buyer-portal)
+
+## Live Demo
+
+- Production App: [https://real-estate-buyer-portal.vercel.app/](https://real-estate-buyer-portal.vercel.app/)
 
 ## Overview
 
@@ -90,7 +94,7 @@ buyer-portal/
 └── README.md
 ```
 
-## Getting Started (from GitHub)
+## Getting Started - How to Run Locally
 
 ## 1. Clone the repository
 
@@ -124,11 +128,6 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secure_jwt_secret
 ```
-
-Notes:
-
-- Use a strong `JWT_SECRET` value.
-- Ensure your MongoDB connection is accessible from your machine.
 
 ## 4. Seed sample property data (optional)
 
