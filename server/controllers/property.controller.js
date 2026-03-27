@@ -1,4 +1,7 @@
 import Property from '../models/property.model.js';
+import Favorite from '../models/favorite.model.js';
+import jwt from 'jsonwebtoken';
+import User from '../models/user.model.js';
 
 // @desc    Get all properties
 // @route   GET /api/properties
