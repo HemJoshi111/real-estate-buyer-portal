@@ -1,4 +1,6 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL =
+    import.meta.env.VITE_API_BASE_URL?.trim() ||
+    "https://real-estate-buyer-portal-wqvg.onrender.com/api";
 
 const parseError = async (response) => {
     let data = null;

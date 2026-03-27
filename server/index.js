@@ -19,8 +19,12 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 const corsOptions = {
-  origin: 'https://real-estate-buyer-portal.vercel.app/',
-  optionsSuccessStatus: 200
+  origin: [
+    "https://real-estate-buyer-portal.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+  ],
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 app.use(express.json());
