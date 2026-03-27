@@ -8,15 +8,18 @@ export const registerUser = async (req, res) => {
 
     // Destructure name, email, and password from request body
     const { name, email, password } = req.body;
+    const normalizedEmail = email?.trim().toLowerCase();
 
     // Validation
-    if (!name || !email || !password) {
+    if (!name || !normalizedEmail || !password) {
         return res.status(400).json({ message: 'Please include all fields' });
     }
 
     try {
         // Check if user already exists with the same email or not.
-        const userExists = await User.findOne({ email });
+        const userExists = await User.findOne({
+            email: normalizedEmail
+        });
 
         // If user exists, return error
         if (userExists) {
@@ -26,7 +29,7 @@ export const registerUser = async (req, res) => {
         // Create user if not exists
         const user = await User.create({
             name,
-            email,
+            email: normalizedEmail,
             password,
         });
 
@@ -53,15 +56,16 @@ export const registerUser = async (req, res) => {
 // @access  Public
 export const loginUser = async (req, res) => {
     const { email, password } = req.body;
+    const normalizedEmail = email?.trim().toLowerCase();
 
     // Validation
-    if (!email || !password) {
+    if (!normalizedEmail || !password) {
         return res.status(400).json({ message: 'Please include email and password' });
     }
 
     try {
         // Find user by email and include password field for comparison
-        const user = await User.findOne({ email }).select('+password');
+        const user = await User.findOne({ email: normalizedEmail }).select('+password');
 
         // If user exists and password matches, return user data and token
         if (user && (await user.matchPassword(password))) {
@@ -95,4 +99,11 @@ export const getUserProfile = async (req, res) => {
     } else {
         res.status(404).json({ message: 'User not found' });
     }
+};
+
+// @desc    Logout user
+// @route   POST /api/users/logout
+// @access  Private
+export const logoutUser = async (req, res) => {
+    return res.status(200).json({ message: 'Logged out successfully' });
 };
