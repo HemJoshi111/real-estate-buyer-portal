@@ -43,6 +43,17 @@ This project implements a practical buyer workflow with secure authentication an
 
 ## Tech Stack
 
+![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB.svg)
+![Backend](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-3C873A.svg)
+![Database](https://img.shields.io/badge/Database-MongoDB%20%2B%20Mongoose-4DB33D.svg)
+![Authentication](https://img.shields.io/badge/Auth-JWT%20%2B%20bcryptjs-0A66C2.svg)
+![Routing](https://img.shields.io/badge/Routing-React%20Router-CA4245.svg)
+![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS-06B6D4.svg)
+![Icons](https://img.shields.io/badge/Icons-Lucide%20React-111827.svg)
+![Architecture](<https://img.shields.io/badge/Architecture-Client--Server%20(REST)-7C3AED.svg>)
+
+### Stack Details
+
 ### Frontend
 
 - React + Vite
@@ -199,6 +210,44 @@ Base URL: `http://localhost:5000/api`
 7. Open card modal for full property details
 8. Logout from dashboard
 
+## Example Flows
+
+### Flow 1: New User Onboarding
+
+1. Open the app (`http://localhost:5173`).
+2. Switch to `Sign up`.
+3. Enter `name`, `email`, and `password`.
+4. Submit the form to create your account.
+5. You are authenticated and redirected to the dashboard.
+
+### Flow 2: Login + Add Favourite
+
+1. Open the app and choose `Login`.
+2. Sign in with your registered email and password.
+3. On `Home`, browse properties.
+4. Click the heart icon on any property card.
+5. A success toast appears, and the property is added to your favourites.
+
+### Flow 3: View and Remove Favourite
+
+1. From dashboard, open `My Favorites` in the sidebar.
+2. Confirm your liked properties are listed.
+3. Click the heart icon again on a saved property.
+4. A success toast appears, and the property is removed.
+
+### Flow 4: Property Detail Modal
+
+1. Click any property card (image or content area).
+2. A popup/modal opens with full details.
+3. You can add/remove favourite directly from the modal.
+4. Close the modal with the `X` button, backdrop click, or `Esc` key.
+
+### Flow 5: Secure Logout
+
+1. Click `Logout` from the dashboard header.
+2. Auth state is cleared on client (and logout endpoint is called).
+3. You are redirected to the login screen.
+
 ## Screenshots (Current UI)
 
 ### Login
@@ -226,24 +275,6 @@ Base URL: `http://localhost:5000/api`
 - Passwords are hashed before saving (`bcryptjs`)
 - JWT is used for protected route authorization
 - User-specific favourites are enforced server-side using authenticated user context
-
-## Troubleshooting
-
-### Frontend cannot connect to backend
-
-- Verify backend is running on port `5000`
-- Verify frontend API base URL in `client/src/api/api.js`
-- Check CORS settings in backend
-
-### Mongo connection issue
-
-- Validate `MONGO_URI` in `server/.env`
-- Confirm network/IP access if using MongoDB Atlas
-
-### Invalid token / unauthorized errors
-
-- Re-login to refresh token
-- Ensure `Authorization: Bearer <token>` is sent for protected endpoints
 
 ## Author
 
