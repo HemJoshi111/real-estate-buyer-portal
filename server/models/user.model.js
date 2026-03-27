@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema(
         name: {
             type: String,
             required: [true, "Please add a name"],
+            trim: true,
         },
         email: {
             type: String,
@@ -15,6 +16,7 @@ const userSchema = new mongoose.Schema(
                 /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/,
                 "Please add a valid email",
             ],
+            trim: true,
         },
 
         password: {
@@ -26,6 +28,7 @@ const userSchema = new mongoose.Schema(
                 "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
             ],
             select: false,
+            trim: true,
         },
 
         role: {
