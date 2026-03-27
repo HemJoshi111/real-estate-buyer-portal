@@ -119,7 +119,7 @@ cd ../client
 npm install
 ```
 
-## 3. Configure environment variables (Backend)
+## 3. Configure environment variables
 
 Inside `server/`, create a `.env` file:
 
@@ -127,6 +127,12 @@ Inside `server/`, create a `.env` file:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secure_jwt_secret
+```
+
+Inside `client/`, create a `.env` file:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
 ## 4. Seed sample property data (optional)
