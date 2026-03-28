@@ -37,7 +37,9 @@ img {
 
 /* Mobile touch optimization utilities */
 @supports (touch-action: manipulation) {
-  button, a, [role="button"] {
+  button,
+  a,
+  [role="button"] {
     touch-action: manipulation;
   }
 }

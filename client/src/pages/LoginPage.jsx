@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { AlertCircle, Building2, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
+import {
+  AlertCircle,
+  Building2,
+  Eye,
+  EyeOff,
+  Lock,
+  Mail,
+  User,
+} from "lucide-react";
 import { useAuth } from "../hooks/useAuth";
 
 const initialLogin = {
@@ -288,7 +296,9 @@ const LoginPage = () => {
                     type="button"
                     onClick={() => setShowLoginPassword((prev) => !prev)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
-                    aria-label={showLoginPassword ? "Hide password" : "Show password"}
+                    aria-label={
+                      showLoginPassword ? "Hide password" : "Show password"
+                    }
                   >
                     {showLoginPassword ? (
                       <EyeOff className="h-4 w-4" />
@@ -373,7 +383,9 @@ const LoginPage = () => {
                     type="button"
                     onClick={() => setShowSignupPassword((prev) => !prev)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
-                    aria-label={showSignupPassword ? "Hide password" : "Show password"}
+                    aria-label={
+                      showSignupPassword ? "Hide password" : "Show password"
+                    }
                   >
                     {showSignupPassword ? (
                       <EyeOff className="h-4 w-4" />
