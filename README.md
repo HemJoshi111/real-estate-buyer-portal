@@ -283,4 +283,4 @@ Base URL: `http://localhost:5000/api`
 
 ## Author
 
-Developed by Er. Hem Joshi.
+[![Er. Hem Joshi](https://img.shields.io/badge/Er.%20Hem%20Joshi-1F2937?style=flat&logo=github&logoColor=white)](https://github.com/HemJoshi111)
