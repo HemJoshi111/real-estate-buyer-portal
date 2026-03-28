@@ -34,3 +34,20 @@ img {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Mobile touch optimization utilities */
+@supports (touch-action: manipulation) {
+  button, a, [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+/* Ensure clickable elements have minimum touch target size */
+@media (max-width: 768px) {
+  button:not(.p-0),
+  a[href]:not(.p-0, .p-1),
+  [role="button"]:not(.p-0) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

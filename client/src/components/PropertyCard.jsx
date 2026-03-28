@@ -58,7 +58,7 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
         <img
           src={displayImage}
           alt={property.title}
-          className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-40 sm:h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent" />
@@ -75,14 +75,14 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
             disabled={pending}
-            className={`rounded-full p-2.5 transition cursor-pointer ${
+            className={`rounded-full p-2.5 sm:p-3 transition cursor-pointer touch-manipulation ${
               isFavorited
                 ? "bg-rose-600 text-white"
                 : "bg-white/90 text-slate-700 hover:bg-white"
             } ${pending ? "opacity-60 cursor-not-allowed" : ""}`}
             aria-label={isFavorited ? "Remove from favourites" : "Add to favourites"}
           >
-            <Heart className={`h-5 w-5 ${isFavorited ? "fill-current" : ""}`} />
+            <Heart className={`h-5 w-5 sm:h-6 sm:w-6 ${isFavorited ? "fill-current" : ""}`} />
           </button>
         </div>
         <div className="absolute bottom-3 left-3 rounded-lg bg-white/90 backdrop-blur px-3 py-1.5 border border-white/70">
@@ -92,7 +92,7 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
       </div>
 
         <div className="w-full text-left p-5 space-y-3">
-          <h3 className="text-[1.45rem] sm:text-[1.6rem] font-medium tracking-tight text-slate-900 leading-[1.15] break-words line-clamp-2">
+          <h3 className="text-lg sm:text-[1.45rem] md:text-[1.6rem] font-medium tracking-tight text-slate-900 leading-[1.15] break-words line-clamp-2">
           {property.title}
         </h3>
           <div className="flex items-center pt-1 text-sm text-slate-600">
@@ -113,9 +113,9 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
         <div className="relative h-full w-full flex items-center justify-center p-4 sm:p-6">
           <div
             onClick={(event) => event.stopPropagation()}
-            className={`w-full max-w-3xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden transform transition-all duration-300 ${isModalOpen ? "scale-100 translate-y-0" : "scale-95 translate-y-3"}`}
+            className={`w-full max-w-3xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden transform transition-all duration-300 max-h-[90vh] overflow-y-auto ${isModalOpen ? "scale-100 translate-y-0" : "scale-95 translate-y-3"}`}
           >
-            <div className="relative h-64 sm:h-80 overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden">
               <img src={displayImage} alt={property.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 to-transparent" />
               <div className="absolute top-4 right-4 flex items-center gap-2">
@@ -128,22 +128,22 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
                   onMouseEnter={() => setIsModalFavoriteHovered(true)}
                   onMouseLeave={() => setIsModalFavoriteHovered(false)}
                   disabled={pending}
-                  className={`rounded-full p-2.5 transition cursor-pointer ${
+                  className={`rounded-full p-2.5 sm:p-3 transition cursor-pointer touch-manipulation ${
                     isFavorited
                       ? "bg-rose-600 text-white"
                       : "bg-white/90 text-slate-700 hover:bg-white"
                   } ${pending ? "opacity-60 cursor-not-allowed" : ""}`}
                   aria-label={isFavorited ? "Remove from favourites" : "Add to favourites"}
                 >
-                  <Bookmark className={`h-5 w-5 ${isFavorited ? "fill-current" : ""}`} />
+                  <Bookmark className={`h-5 w-5 sm:h-6 sm:w-6 ${isFavorited ? "fill-current" : ""}`} />
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-full bg-white/90 hover:bg-white p-2 text-slate-700 cursor-pointer"
+                  className="rounded-full bg-white/90 hover:bg-white p-2.5 sm:p-3 text-slate-700 cursor-pointer touch-manipulation"
                   aria-label="Close details"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
               </div>
               <div
@@ -157,7 +157,7 @@ const PropertyCard = ({ property, isFavorited, onToggleFavorite, pending }) => {
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 grid sm:grid-cols-2 gap-4 sm:gap-5">
+            <div className="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 max-h-[50vh] sm:max-h-none overflow-y-auto">
               <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-500">Price</p>
                 <p className="mt-1 text-2xl font-extrabold text-amber-700">{currency.format(property.price)}</p>

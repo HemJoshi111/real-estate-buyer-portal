@@ -170,13 +170,13 @@ const LoginPage = () => {
   return (
     <main className="min-h-screen relative overflow-hidden bg-slate-950 text-slate-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(251,191,36,0.2),transparent_35%),radial-gradient(circle_at_90%_0%,rgba(14,165,233,0.18),transparent_38%),linear-gradient(145deg,#020617,#0f172a_55%,#1e293b)]" />
-      <div className="relative max-w-6xl mx-auto px-5 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
-        <section className="space-y-6">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-5 py-8 sm:py-12 lg:py-20 grid lg:grid-cols-2 gap-6 sm:gap-10 items-center">
+        <section className="space-y-4 sm:space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 border border-white/20 text-sm">
             <Building2 className="h-4 w-4 text-amber-300" />
             EstateHub
           </div>
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
             Find homes you love, and save them in one place.
           </h1>
           <p className="text-slate-300 max-w-xl">
@@ -196,7 +196,7 @@ const LoginPage = () => {
           </div>
         </section>
 
-        <section className="rounded-2xl bg-white text-slate-900 p-6 md:p-8 shadow-2xl border border-slate-100">
+        <section className="rounded-2xl bg-white text-slate-900 p-5 sm:p-6 md:p-8 shadow-2xl border border-slate-100">
           <div className="flex rounded-xl bg-slate-100 p-1 mb-6">
             <button
               type="button"
@@ -244,7 +244,7 @@ const LoginPage = () => {
           ) : null}
 
           {isLogin ? (
-            <form onSubmit={onSubmitLogin} className="space-y-4">
+            <form onSubmit={onSubmitLogin} className="space-y-3 sm:space-y-4">
               <label className="block">
                 <span className="text-sm font-medium text-slate-700">
                   Email
@@ -308,7 +308,7 @@ const LoginPage = () => {
               </button>
             </form>
           ) : (
-            <form onSubmit={onSubmitSignup} className="space-y-4">
+            <form onSubmit={onSubmitSignup} className="space-y-3 sm:space-y-4">
               <label className="block">
                 <span className="text-sm font-medium text-slate-700">
                   Full name

@@ -159,7 +159,7 @@ const DashboardPage = () => {
   return (
     <main className="min-h-screen bg-[linear-gradient(160deg,#fffef9,#f8fafc_55%,#ecfeff)]">
       <header className="border-b border-slate-200/70 bg-white/90 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+        <div className="max-w-6xl mx-auto px-4 sm:px-5 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
           <div className="rounded-2xl border border-slate-200 bg-white/80 backdrop-blur px-4 py-2.5 shadow-sm">
             <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold">
               Buyer Workspace
@@ -198,9 +198,9 @@ const DashboardPage = () => {
         </div>
       </header>
 
-      <div className="fixed top-5 right-5 z-[90] pointer-events-none">
+      <div className="fixed top-3 right-3 sm:top-5 sm:right-5 z-[90] pointer-events-none max-w-xs sm:max-w-sm">
         <div
-          className={`${toast.message && toast.visible ? "pointer-events-auto" : "pointer-events-none"} min-w-[260px] max-w-sm rounded-2xl border p-3 shadow-lg transition-all duration-300 ${
+          className={`${toast.message && toast.visible ? "pointer-events-auto" : "pointer-events-none"} w-full rounded-2xl border p-3 shadow-lg transition-all duration-300 ${
             toast.type === "error"
               ? "border-rose-200 bg-rose-50 text-rose-800"
               : "border-emerald-200 bg-emerald-50 text-emerald-800"
@@ -236,9 +236,9 @@ const DashboardPage = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-5 py-6 space-y-6">
-        <div className="grid lg:grid-cols-[240px_1fr] gap-5">
-          <aside className="rounded-2xl bg-white border border-slate-200 p-3 h-fit lg:sticky lg:top-[168px]">
-            <p className="px-3 py-2 text-xs uppercase tracking-wide text-slate-500 font-semibold">
+        <div className="grid lg:grid-cols-[240px_1fr] gap-4 sm:gap-5">
+          <aside className="rounded-2xl bg-white border border-slate-200 p-3 h-fit lg:sticky lg:top-[168px] flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible">
+            <p className="px-3 py-2 text-xs uppercase tracking-wide text-slate-500 font-semibold whitespace-nowrap\">
               Menu
             </p>
             <nav className="flex lg:flex-col gap-2">
@@ -299,7 +299,7 @@ const DashboardPage = () => {
                     </p>
                   </div>
                 ) : (
-                  <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
                     {favoriteProperties.map((property) => (
                       <PropertyCard
                         key={`fav-${property._id}`}
@@ -324,7 +324,7 @@ const DashboardPage = () => {
                     </p>
                   </div>
                 ) : (
-                  <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
                     {properties.map((property) => (
                       <PropertyCard
                         key={property._id}
